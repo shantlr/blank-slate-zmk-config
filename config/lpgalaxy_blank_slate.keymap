@@ -37,30 +37,30 @@
     };
 
     macros {
-      ZMK_MACRO(thumbs_up,
-		wait-ms = <1>;
-		tap-ms = <5>;
-                bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
-		)
+    //   ZMK_MACRO(thumbs_up,
+	// 	wait-ms = <1>;
+	// 	tap-ms = <5>;
+    //             bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
+	// 	)
     };
     
     tap_dances {
-    	shifty: shift_caps_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SHIFTY";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp LSHFT>, <&caps_word>;
-	    };
+    	// shifty: shift_caps_word {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     label = "TD_SHIFTY";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <150>;
+        //     bindings = <&kp LSHFT>, <&caps_word>;
+	    // };
     };
 
 // Conditional layer only when we have less thumb keys
 // #ifdef TBLE_DUAL_2U
     cond_layers {
         compatible = "zmk,conditional-layers";
-	tri {
-	    if-layers = <RIGHT_L LEFT_L>;
-	    then-layer = <SYM_L>;
+    	tri {
+            if-layers = <RIGHT_L LEFT_L>;
+            then-layer = <SYM_L>;
         };
     };
 // #endif
@@ -71,10 +71,10 @@
         base_layer {
             label = "Base";
             bindings = <
- &kp ESC    &kp SQT    &kp COMMA  &kp DOT     &kp P          &kp Y          &kp F            &kp G          &kp C       &kp R      &kp L         &kp BKSP
- &kp TAB    &kp A      &kp O      &kp E       &kp U          &kp I          &kp D            &kp H          &kp T       &kp N      &kp S         &kp BSPC
- &kp LSHFT  &kp SEMI   &kp Q      &kp J       &kp K          &kp X          &kp B            &kp M          &kp W       &kp V      &kp Z         &kp RSHFT
- &kp LGUI  &mo LCTRL   &kp LGUI   &kp LALT    &mo LEFT_L     &kp ENTER      &kp SPACE        &mo RIGHT_L      &kp RALT    &mo SYM_L  &kp RCTRL     &kp LGUI
+&kp ESC    &kp SQT    &kp COMMA  &kp DOT     &kp P          &kp Y          &kp F            &kp G          &kp C       &kp R      &kp L         &kp BKSP
+&kp TAB    &kp A      &kp O      &kp E       &kp U          &kp I          &kp D            &kp H          &kp T       &kp N      &kp S         &kp BSPC
+&kp LSHFT  &kp SEMI   &kp Q      &kp J       &kp K          &kp X          &kp B            &kp M          &kp W       &kp V      &kp Z         &kp RSHFT
+&kp LGUI  &mo LCTRL   &kp LGUI   &kp LALT    &mo LEFT_L     &kp ENTER      &kp SPACE        &mo RIGHT_L    &kp RALT    &mo SYM_L  &kp RCTRL     &kp LGUI
             >;
         };
 
@@ -91,20 +91,20 @@
         right_layer {
             label = "Right";
             bindings = <
-&trans     &kp LBKT   &trans   &trans       &trans    &kp RBKT    &kp C_PREV    &kp PG_UP  &kp PG_DN   &trans       &trans     &trans
-&kp TILDE  &kp SLASH  &kp LALT &kp LA(LGUI) &kp LCTL  &kp EQUAL   &kp C_NEXT    &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT  &trans
-&trans     &kp GRAVE  &trans   &trans       &trans    &kp BSLH    &trans        &kp HOME   &kp END     &trans       &trans     &trans
-&trans     &trans     &trans   &trans       &trans    &trans       &trans       &kp trans  &kp trans   &trans       &trans     &trans
+&trans     &kp LBKT   &trans   &trans       &trans    &trans    &trans    &kp PG_UP  &kp PG_DN   &trans       &trans     &trans
+&kp TILDE  &kp SLASH  &kp LALT &kp LA(LGUI) &kp LCTL  &trans    &trans    &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT  &trans
+&trans     &kp GRAVE  &trans   &trans       &trans    &trans    &trans    &kp HOME   &kp END     &trans       &trans     &trans
+&trans     &trans     &trans   &trans       &trans    &trans    &trans    &kp trans  &kp trans   &trans       &trans     &trans
             >;
         };
 
         sym_layer {
             label = "Sym";
-            bindings = <
-&trans     &kp BT_SEL 0   &kp BT_SEL 1    &kp BT_SEL_2     &kp BT_SEL 3     &BT_SEL 4        &trans     &trans    &trans       &studio_unlock       &trans       &trans
-&trans     &trans         &trans          &trans           &trans           &trans           &trans     &trans    &trans       &bootloader          &trans       &trans
-&trans     &trans         &trans          &trans           &trans           &trans           &trans     &trans    &trans       &kp BT_CLR           &trans       &trans
-&trans     &trans         &trans          &trans           &trans           &trans           &trans     &trans    &trans       &trans               &trans       &trans
+            binding
+&trans     &kp BT(0)  &kp BT(1)  &kp BT(2)    &kp BT(3)  &kp BT(4)        &trans     &trans    &trans  &studio_unlock  &trans       &trans
+&trans     &trans     &trans     &trans       &trans     &trans           &trans     &trans    &trans  &bootloader     &trans       &trans
+&trans     &trans     &trans     &trans       &trans     &trans           &trans     &trans    &trans  &kp BT_CLR      &trans       &trans
+&trans     &trans     &trans     &trans       &trans     &trans           &trans     &trans    &trans  &trans          &trans       &trans
             >;
         };
 
